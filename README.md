@@ -356,6 +356,8 @@ make ```src/routes/+page_svelte``` look like
       }
     </style>
 
+<br/>
+
     npm install -D @sveltejs/adapter-static
 
 Update ```svelte.config.js``` to create static pages
