@@ -421,6 +421,8 @@ Copy the results to the static rails directory.
 
     cp -Rf build/* public
 
+You can now run ```rails server``` and surf to ```localhost:3000```.
+
 If you want to run dynamically, you'll need a CORS extension.
 
     bundle add rack-cors
