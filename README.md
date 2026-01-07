@@ -33,8 +33,6 @@ Here is what is created.
 
 Make src/lib/api.ts look like the following.
 
-<hr/>
-
     export interface Item {
       id?: number;
       what: string;
@@ -82,11 +80,7 @@ Make src/lib/api.ts look like the following.
       if (!response.ok) throw new Error('Failed to delete item');
     }
 
-<hr/>
-
 make ```src/routes/+page_svelte``` look like
-
-<hr/>
 
     <script lang="ts">
       import { onMount } from 'svelte';
@@ -362,13 +356,9 @@ make ```src/routes/+page_svelte``` look like
       }
     </style>
 
-<hr/>
-
     npm install -D @sveltejs/adapter-static
 
 Update ```svelte.config.js``` to create static pages
-
-<hr/>
 
     import adapter from '@sveltejs/adapter-static';
     import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
@@ -390,11 +380,7 @@ Update ```svelte.config.js``` to create static pages
 
     export default config;
 
-<hr/>
-
 create ```src/routes/+layout.ts``` with
-
-<hr/>
 
     export const prerender = true;
     export const ssr = false;
@@ -443,12 +429,11 @@ Here is a tree view of what gets built.
       end
     end
 
-src/routes/+layouts.svelte
+If wanted, add a Google font (https://fonts.google.com) to
+```/src/routes/+layouts.svelte```
 
     <style>
       :global(body) {
         font-family: 'Roboto', sans-serif;
       }
     </style>
-
-https://fonts.google.com/
