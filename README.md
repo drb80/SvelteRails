@@ -417,9 +417,14 @@ Here is a tree view of what gets built.
     ├── index.html
     └── robots.txt
 
+<br/>
     cp -Rf build/* public
 
+If you want to run dynamically, you'll need a CORS extension
+
     bundle add rack-cors
+
+In config/initializers/cors.rb
 
     Rails.application.config.middleware.insert_before 0, Rack::Cors do
       allow do
@@ -430,6 +435,8 @@ Here is a tree view of what gets built.
           methods: [:get, :post, :put, :patch, :delete, :options, :head]
       end
     end
+
+Now you can ```npm run dev --open```
 
 If wanted, add a Google font (https://fonts.google.com) to
 ```/src/routes/+layouts.svelte```
