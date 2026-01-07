@@ -4,14 +4,14 @@
     rails db:migrate
     rails db:seed
 
-Create a default route:
+Create a default route.
 
     Rails.application.routes.draw do
       resources :items
       root "items#index"
     end
 
-Overlay a Svelte app
+Overlay a Svelte app.
 
     npx sv create --template minimal --types ts --install npm .
 
@@ -80,7 +80,7 @@ Make src/lib/api.ts look like the following.
       if (!response.ok) throw new Error('Failed to delete item');
     }
 
-make ```src/routes/+page_svelte``` look like
+Make ```src/routes/+page_svelte``` look like.
 
     <script lang="ts">
       import { onMount } from 'svelte';
@@ -360,7 +360,7 @@ make ```src/routes/+page_svelte``` look like
 
     npm install -D @sveltejs/adapter-static
 
-Update ```svelte.config.js``` to create static pages
+Update ```svelte.config.js``` to create static pages.
 
     import adapter from '@sveltejs/adapter-static';
     import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
@@ -382,7 +382,7 @@ Update ```svelte.config.js``` to create static pages
 
     export default config;
 
-create ```src/routes/+layout.ts``` with
+Create ```src/routes/+layout.ts``` with the following.
 
     export const prerender = true;
     export const ssr = false;
@@ -417,14 +417,15 @@ Here is a tree view of what gets built.
     ├── index.html
     └── robots.txt
 
-<br/>
+Copy the results to the static rails directory.
+
     cp -Rf build/* public
 
-If you want to run dynamically, you'll need a CORS extension
+If you want to run dynamically, you'll need a CORS extension.
 
     bundle add rack-cors
 
-In config/initializers/cors.rb
+In ```config/initializers/cors.rb```.
 
     Rails.application.config.middleware.insert_before 0, Rack::Cors do
       allow do
@@ -436,10 +437,10 @@ In config/initializers/cors.rb
       end
     end
 
-Now you can ```npm run dev --open```
+Now you can ```npm run dev --open```.
 
 If wanted, add a Google font (https://fonts.google.com) to
-```/src/routes/+layouts.svelte```
+```/src/routes/+layouts.svelte```.
 
     <style>
       :global(body) {
