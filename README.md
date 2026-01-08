@@ -1,3 +1,11 @@
+TL;DR:
+
+    rails db:migrate
+    rails db:seed
+    rails server
+
+Longer how to.
+
     rails new SvelteRails --api
     cd SvelteRails
     rails g scaffold Item what when:date
