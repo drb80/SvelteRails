@@ -1,4 +1,4 @@
-TL;DR:
+TL;DR, clone this repo then:
 
     rails db:migrate
     rails db:seed
